@@ -34,7 +34,7 @@
                         <!-- LOGO -->
                         <div id="eskimo-logo-cell" class="w-100">
                             <a class="eskimo-logo-link" href="{% url 'home' %}">
-                                <img src="{% static 'img/logo.png' %}" class="eskimo-logo" alt="eskimo" />
+                                <img src="{% static 'img/logo.png' %}" class="eskimo-logo"/>
                             </a>
                         </div>
                         <!-- MENU CONTAINER -->
@@ -69,7 +69,7 @@
                                             <li><a href="{% url 'user_info' %}">个人资料</a></li>
                                             <li><a href="{% url 'change_password' %}">修改密码</a></li>
                                             {% if user.is_staff or user.is_superuser %}
-                                            <li><a href="{% url 'admin:index' %}">后台管理</a></li>
+                                            <li><a href="{% url 'xadmin:index' %}">后台管理</a></li>
                                             {% endif %}
                                             <li><a href="{% url 'logout' %}?from={{ request.get_full_path }}">退出</a></li>
                                         </ul>
@@ -83,7 +83,7 @@
                             <div id="eskimo-social-inner">
                                 <ul class="eskimo-social-icons">
                                     <li><a href="tencent://AddContact/?fromId=45&fromSubId=1&subcmd=all&uin=2839296425&website=www.oicqzone.com"><i class="fa fa-qq"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-github-alt"></i></a></li>
+                                    <li><a href="https://github.com/breakTBB/django-website"><i class="fa fa-github-alt"></i></a></li>
                                 </ul>
                                 <div class="clearfix"></div>
                             </div>

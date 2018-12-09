@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block title %}个人资料{% endblock %}
 {% block nav_home_active %}active{% endblock %}
 {% block content %}
@@ -10,7 +9,7 @@
             <h3> <span>{{ user.username }}</span></h3>
         </div>
         <ul class="list-group list-group-item">
-
+            <div class="clearfix"></div>
             <li class="list-group-item">昵称：{{ user.get_nickname }}</li>
             <li class="list-group-item">邮箱：
                 {% if user.email %}
@@ -20,8 +19,8 @@
                 {% endif %}</li>
             <li class="list-group-item">上一次登录的时间：{{ user.last_login|date:"Y-m-d H:i:s" }}</li>
             <div class="pull-right p-1">
-                    <a href="{% url 'change_password' %}" class="btn btn-outline-primary m-1">修改密码</a>
-                    <a href="{% url 'change_nickname' %}?from={{ request.get_full_path }}" class="btn btn-outline-primary m-1">修改昵称</a>
+                <a href="{% url 'change_password' %}" class="btn btn-outline-primary m-1">修改密码</a>
+                <a href="{% url 'change_nickname' %}?from={{ request.get_full_path }}" class="btn btn-outline-primary m-1">修改昵称</a>
             </div>
         </ul>
         {% else %}
